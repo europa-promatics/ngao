@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ListAgent page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar color="danger">
+  <ion-buttons end>
+      <button ion-button (click)="AgentsOnMap()"><ion-icon name="pin"></ion-icon></button>
+     </ion-buttons>
+    <ion-title>ListAgent</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<ion-list *ngFor="let value of agent_details">
+  <ion-item text-wrap>
+
+    <ion-avatar item-left>
+      <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/agents/{{value.photo}}">
+    </ion-avatar>
+    <h2>{{value.name}}</h2>
+    <p>{{value.location}}</p>
+   <!-- 
+     <button ion-button item-right color="secondary" (click)="presentPopover()" (ionSelect)="presentPopover()" >
+        <ion-icon name="more"></ion-icon>
+     </button> -->
+  <!--    <img item-right  (click)="presentPopover(value)"  src="img/three-1.png"> -->
+  <button ion-button clear item-right (click)="presentPopover(value)"><ion-icon style="color: black" name="more"></ion-icon></button>
+    
+  </ion-item>
+
+</ion-list>
+
+</ion-content>
+

@@ -1,0 +1,95 @@
+page-report {
+ion-select {
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+    width: 90%;
+    float: left;
+}
+ion-label {
+    display: block;
+    flex: 1 1 0;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 10%;
+}
+.label {
+    margin: 0px 0px 0px 0;
+}
+.check-report{
+    font-size:2.1rem 
+}
+ion-datetime {
+   display: flex;
+    max-width: 100%;
+    overflow: hidden;
+    width: 90%;
+    float: left;
+}
+.datetime-md {
+    padding: 13px 8px 13px 0px !important;
+}
+.datetime-ios {
+    padding: 13px 8px 13px 0px !important;
+}
+
+.customer-goals .choice-override {
+    height: 175px !important;
+    margin-top: 25px !important;
+}
+.customer-goals .choice-override {
+    height: 175px !important;
+    margin-top: 25px !important;
+}
+ion-col[width-20] {
+    -moz-box-flex: 0;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.choice-wrap {
+    cursor: pointer;
+    display: inline-block;
+    overflow: visible;
+    padding-right: 2%;
+    text-align: center;
+    transform: translate3d(0px, 0px, 0px);
+    vertical-align: top;
+    width: 25%;
+}
+ion-col {
+    -moz-box-flex: 1;
+    display: block;
+    flex: 1 1 0;
+    padding: 5px;
+    width: 100%;
+}
+.choice-wrap.active .btn-choice {
+    animation: 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 running scaleIn;
+    background: #F53D3D none repeat scroll 0 0;
+    border: 0.4rem solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.choice-wrap .btn-choice {
+    background: #fff none repeat scroll 0 0;
+    border: 0.4rem solid #f4f4f4;
+    border-radius: 50%;
+    box-shadow: none;
+    display: inline-block;
+    height: 6rem;
+    padding-top: 1.5rem;
+    pointer-events: none;
+    text-align: center;
+    transform: scale(1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+    width: 6rem;
+}
+.choice-wrap.active span.desc { color: #004e92;}
+.choice-wrap span.desc {display: block;font-weight: 500;padding-top: 0.75rem;text-align: center;    text-transform: uppercase;}
+.choice-wrap *:last-child { padding-right: 0;}* {box-sizing: border-box;}
+.choice-wrap {    cursor: pointer;    text-align: center;}
+
+}

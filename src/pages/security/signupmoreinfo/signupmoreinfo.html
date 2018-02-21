@@ -1,0 +1,120 @@
+<!--
+  Generated template for the Signupmoreinfo page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="has-header" padding="true" style="background: url(img/bg-img.png) no-repeat center;background-size:cover;">
+<ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+        <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/transport-2.png">
+                      </ion-icon>
+           <!--  <ion-icon name="mail" item-left></ion-icon> -->
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="data.inspection_description" placeholder="Inspection Detail"></ion-input>
+        </ion-item>
+  <!--       <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+        <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/transport-3.png">
+                      </ion-icon> -->
+           <!--  <ion-icon name="mail" item-left></ion-icon> -->
+       <!--  </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="data.self_inspection" placeholder="Self-Inspection Detail"></ion-input>
+        </ion-item> -->
+      <!--   <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label  stacked style="background-color:transparent; color:#768284">Registration Expiration
+            <ion-icon name="mail" item-left></ion-icon>
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="Registration"></ion-input>
+        </ion-item> -->
+        <ion-item style="background-color:transparent; color:#768284">
+  <ion-label style="background-color:transparent; color:#768284" >
+   <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/transport-3.png">
+                      </ion-icon></ion-label>
+  <ion-datetime style="background-color:transparent; color:#768284" displayFormat="YYYY" placeholder="License Sticker" [(ngModel)]="data.registration_expiration" ></ion-datetime>
+</ion-item>
+          <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label style="background-color:transparent; color:#768284">
+                       <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.license_sticker" placeholder="License Sticker">
+                        <ion-option value="yes" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label  style="background-color:transparent; color:#768284">
+                     <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.brake_lights" placeholder="Brake Light Working">
+                        <ion-option value="yes1" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no1" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+                 <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label  style="background-color:transparent; color:#768284">
+                      <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.head_lights" placeholder="Head Light Working">
+                        <ion-option value="yes2" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no2" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label  style="background-color:transparent; color:#768284">
+                     <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.front_signal" placeholder="Front Turn Signal Working">
+                        <ion-option value="yes3" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no3" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label  style="background-color:transparent; color:#768284">
+                        <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.rear_signal" placeholder="Rear Turn Signal Working">
+                        <ion-option value="yes4" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no4" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+                 <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label  style="background-color:transparent; color:#768284">
+                    <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.tinted_windows"  placeholder=" Tinted Windows">
+                        <ion-option value="yes5" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no5" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item style="background-color:transparent; color:#768284">
+                    <ion-label  style="background-color:transparent; color:#768284">
+                        <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/moreinfo/cogwheel.png">
+                      </ion-icon> 
+                    </ion-label>
+                    <ion-select [(ngModel)]="data.crack_windows"  placeholder="Cracks In Window">
+                        <ion-option value="yes6" checked="true" style="background-color:transparent; color:#768284">YES</ion-option>
+                        <ion-option value="no6" style="background-color:transparent; color:#768284">NO</ion-option>
+                    </ion-select>
+                </ion-item>
+<br>
+ <button  ion-button block  (click)="submit()" full style="background-color: #e74c3c;color:#FFFFFF">
+       
+        Back to Sign Up
+    </button>
+</ion-content>

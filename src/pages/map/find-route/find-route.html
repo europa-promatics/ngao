@@ -1,0 +1,74 @@
+
+<ion-header>
+
+  <ion-navbar color='danger'>
+    <ion-title>Find directions</ion-title>
+     <ion-buttons end>
+
+   
+      <button ion-button  (click)="direction()"> <ion-icon name="git-network" style="margin:5px;"></ion-icon></button>
+       <button ion-button (click)="submit()"> <ion-icon name="list" style="margin:5px;"></ion-icon></button>
+     </ion-buttons>
+
+
+
+
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content style="position:relative; ">
+ <div class="jobsearch">
+    <ion-icon name="search" class="search"></ion-icon>
+  
+       <button ion-button (click)="showModa()" style="  float: none;
+    left: 34px;
+    margin-top: 3px;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  width: calc(100% - 63px);"
+ color="danger" clear full>
+    {{address.pla}}
+
+
+
+       </button>
+                  <img src="assets/img/001-arrows.png" style=" border-radius: 27%;
+    height: auto;
+    margin: 6px 0;
+    position: absolute;
+    right: 9px;
+    top: -3px;
+    width: 37px;
+    z-index: 1000;
+"  (click)="refresh()">
+       <div style="clear:both;"></div>
+    </div>
+
+     <ion-fab bottom right  >
+    <button ion-fab mini style="background-color: #F53D3D;color:#FFFFFF;" (click)="presentPopover()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
+
+
+
+      <button ion-button style="background-color: transparent;
+    border-color: #0dadff;
+    box-shadow: -5px 2px 12px -2px black;
+    color: red;" block color="danger"(click)="access()" outline>
+<!--  <button ion-button  block color="danger" (click)="popsy()" outline> -->
+         <ion-icon name="git-network" style="margin:5px;" ></ion-icon>
+          Get Directions
+    </button>
+
+    <div id="mape"></div>
+
+  
+</ion-content>
+
+
+

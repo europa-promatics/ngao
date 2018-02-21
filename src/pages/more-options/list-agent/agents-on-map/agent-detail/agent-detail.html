@@ -1,0 +1,55 @@
+<!--
+  Generated template for the AgentDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<!-- <ion-row>
+		<ion-col>
+			<ion-row>
+				<h6 style="float: left;">Agent name:</h6>
+				 <ion-input value="{{name}}" disabled> </ion-input>
+			</ion-row>
+			<ion-row>
+				<h6 style="float: left;">Agent Type:</h6>
+				 <ion-input value="{{agenttype}}" disabled> </ion-input>
+			</ion-row>
+			<ion-row>
+				<h6 style="float: left;">Agent Vehicle:</h6>
+				 <ion-input value="{{agentvehicle}}" disabled> </ion-input>
+			</ion-row>
+			<ion-row>
+				<h6 style="float: left;">Agent Status:</h6>
+				 <ion-input value="{{agentstatus}}" disabled> </ion-input>
+			</ion-row>
+			<ion-row>
+				<h6 style="float: left;">Agent Information:</h6>
+				 <ion-input value="{{agentinfo}}" disabled> </ion-input>
+			</ion-row>
+		</ion-col>
+		<ion-col>
+			<img style="float: right;" src="http://europa.promaticstechnologies.com/ngao/public/uploads/agents/{{agentphoto}}" width='100px'>
+		</ion-col>
+	</ion-row> -->
+	<ion-item no-lines text-wrap>
+    <ion-thumbnail item-right>
+      <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/agents/{{agentphoto}}"  height="56px"
+    width="56px">
+    </ion-thumbnail>
+     <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Name:</span>{{name}}</p>
+     <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Type:</span> 
+       {{agenttype}}</p>
+       <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Vehicle:</span> 
+        {{agentvehicle}}</p>
+        <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Information:</span>  
+       {{agentinfo}}</p>
+        <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Status:</span>  
+       {{agentstatus}}</p>
+              
+    </ion-item>
+	<ion-buttons style="padding-top: 20px;">
+		<button ion-button color="danger" (click)="up()" >Their</button>
+		<button ion-button color="danger" style="float:right;" (click)="down()">Not Their</button>
+	</ion-buttons>

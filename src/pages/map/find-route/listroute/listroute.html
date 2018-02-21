@@ -1,0 +1,73 @@
+<!--
+  Generated template for the Listroute page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='danger'>
+    <ion-title>Your directions</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:#dadada;">
+<h3>Pick Your directions</h3>
+ <ion-list no-lines style="color:#F9B1B2;">
+ 
+        <ion-item *ngFor="let route of routes" >
+
+      <ion-card (click)="ShowMyRoute(route.route_id)">
+
+        <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #000000;">Route-no:</strong> {{route.route_id}}</ion-item>
+
+             <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #000000;">My Route Name:</strong> {{route.route_name}}</ion-item>
+           <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #E74C3C;">Source:</strong> {{route.source_name}}</ion-item>
+
+          <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"> <strong style="color: #03A552;">Destination:</strong>{{route.destination_name}}</ion-item>
+           
+       </ion-card>
+        </ion-item>
+        
+    </ion-list>
+    
+</ion-content>
+<!-- <ion-content>
+<div style=" border-bottom: 1px solid #d8d8d8;
+    display: inline-flex;
+    float: left;
+    height: auto;
+    width: 100%;  " *ngFor="let route of routes">
+    <div style="    background-color: red;
+    display: inline-block;
+    float: left;
+    width: 20%; padding: 13px; ">
+    <img style="height: 45px; " src="assets/img/road.png">
+</div>
+<div  style="    background-color: blue;
+    display: inline-block;
+    float: left;
+    width:65%;  ">
+
+<p>Route no:-{{route.route_id}}</p>
+<p>Route Name:- {{route.route_name}}</p>
+<p>Source Name:-{{route.source_name}}</p>
+<p>Destination Name:-{{route.destination_name}}</p>
+
+
+</div>
+<div  style="  background-color: green;
+    display: inline-block;
+    float: left;
+    width: 15%;   ">
+</div>
+</div>
+
+
+
+
+
+
+</ion-content> -->

@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ClickPic page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title >clickPic</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-buttons style="text-align: center;">
+	<ion-card>
+		<button ion-button block (click)="take()" >CLICK PIC
+			
+		</button>
+		</ion-card>
+		<ion-card>
+		<button ion-button block (click)="show()" >SHOW PIC
+			
+		</button>
+</ion-card>
+<ion-card>
+		<button ion-button block (click)="show1()" >SHOW PIC
+			
+		</button>
+		</ion-card>
+	</ion-buttons>
+	<ion-item *ngFor="let image of baseimage" >
+		<img [src]="image"/>
+	</ion-item>
+	<img [src]="base64Image" *ngIf="base64Image" />
+</ion-content>

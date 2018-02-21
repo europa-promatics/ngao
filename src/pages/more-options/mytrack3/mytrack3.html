@@ -1,0 +1,83 @@
+<!--
+  Generated template for the Mytrack3 page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+ <ion-navbar color="danger" >
+ <ion-buttons end>
+     <button ion-button (click)="presentPopover()"> <ion-icon name="star" style="margin:5px;"></ion-icon></button>
+      <button ion-button (click)="submit()"> <ion-icon name="list" style="margin:5px;"></ion-icon></button>
+
+     </ion-buttons>
+    <ion-title >Recording Track</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background-color:rgba(0, 0, 0, 0.15)">
+<ion-fab left top style="left: 5px;top: 8px;">
+    <button ion-fab color="danger" (click)="starttracking()" ><ion-icon name="arrow-dropright"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-button style="max-width: 113%;" color="danger" outline>Current Speed: {{locationTracker.speed}} m/s</button>
+      </ion-fab-list>
+      <ion-fab-list side="bottom">
+      <button ion-button color="superdanger" outline>Speed Limit: {{speed}} m/s</button>
+</ion-fab-list>
+    </ion-fab>
+     <ion-fab right top style="right: 28px;top: 8px;">
+    <button ion-fab color="danger" (click)="stopTracking()" ><ion-icon name="hand"></ion-icon></button>
+    </ion-fab>
+     <div  id= "mymapop" > </div>
+
+<div style="background-color: rgba(0, 0, 0, 0.7);
+    height: 37%;
+    left: 7%;
+    position: absolute;
+    top: 22%;
+    width: 84%;
+    border: 1.3px solid #00A9FF;" *ngIf="SpeedPopup==true" >
+
+<div style="background-color:#FAFAFA;
+    height: 18%;
+    position: absolute;
+    width: 86%;
+    z-index: 100;">
+<div style="margin-top:10px">
+    <ion-icon style="color:red;margin-left: 14px;" name="speedometer"></ion-icon><p style="color:red;font-size:1.7rem   ; margin-left: 36px;
+    margin-top: -21px; ">Speed Exceded!!</p>
+</div>
+    </div>
+
+
+    <div >
+<audio controls autoplay>
+
+  <source src="assets/img/dangerous3_HqwgoTte.mp3" type="audio/mpeg">
+
+</audio>
+</div>
+<div id="d" class="otherdivbox">
+    <img class="otherdivimg"  src="assets/img/001-exclamation.png" (click)="close()">
+    <p 
+  class="divp"
+>Slow Down</p>
+</div>
+ </div>
+
+ <div style="
+    height: 31.8%;
+    margin-left: 28px;
+    max-width: 85%;
+    max-height: 27%; background-color: rgba(0, 0, 0, 0);">
+     <canvas #lineCanvas></canvas>
+    </div>
+   <p style="margin-left: -90%;
+    margin-top: -108%;
+    transform: rotate(-90deg);" *ngIf="tapspeed==true">Speed</p>
+     <ion-icon style="margin-left: 31px;
+    margin-top: -36px;" *ngIf="tapspeed==true" ><img  style="height: 42px;" src="assets/img/001-gps-1.png"  ></ion-icon>
+     <p style="margin-left: 27%;
+   margin-top: 96%;"  *ngIf="tapspeed==true" >Distance:{{distance}} (miles/hr)</p>
+</ion-content>

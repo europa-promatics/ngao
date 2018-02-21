@@ -1,0 +1,32 @@
+page-signupnext {
+ion-datetime {
+   display: flex;
+    max-width: 100%;
+    overflow: hidden;
+    width: 90%;
+    float: left;
+}
+ion-label {
+    display: block;
+    flex: 1 1 0;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 10%;
+}
+.label {
+    margin: 0px 0px 0px 0;
+}
+.item-md ion-icon[item-left] + .item-inner, .item-md ion-icon[item-left] + .item-input {
+  margin-left: -32px !important;
+}
+page-signupnext ion-datetime {
+  display: flex;
+  float: left;
+  max-width: 100%;
+  overflow: hidden;
+  width:-7% !important;
+}
+}

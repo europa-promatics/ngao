@@ -1,0 +1,71 @@
+
+<ion-header>
+
+  <ion-navbar color="danger">
+  <ion-title>
+  Dashboard
+  </ion-title>
+ 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+ <div class="jobsearch">
+    <ion-icon name="search" class="search"></ion-icon>
+  
+       <button ion-button (click)="showModal()" style="float: none;
+    left: 34px;
+    margin-top: 5px;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  width: calc(100% - 63px);"
+ color="danger" clear full>
+    {{address.place}}
+
+
+
+       </button>
+                 <img src="assets/img/001-arrows.png" style="  border-radius: 27%;
+    float: right;
+    height: auto;
+    margin: 6px;
+     width: 37px;
+}"  (click)="refresh()" >
+       <div style="clear:both;"></div>
+    </div>
+  <ion-footer style="   height: 74px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    bottom: 30px;">
+
+
+
+<div style=" background-color: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    float: left;
+    font-size: 2.2rem;
+    font-weight: bold;
+    height: 63px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;" (click)="tapdetail()">
+    <span style="color:#FFFFFF">Detail Address</span>
+</div>
+
+<div style="clear:both; "></div>
+</ion-footer>
+
+    <div id="mapo">
+      
+    </div>
+  
+
+
+</ion-content>

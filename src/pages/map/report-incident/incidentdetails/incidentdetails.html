@@ -1,0 +1,40 @@
+<!--
+  Generated template for the Incidentdetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='danger'>
+    <ion-title>IncidentDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding style="background-color:#dadada;">
+
+<ion-list  no-lines style="color:#F9B1B2;">
+
+        <ion-item *ngFor="let incident of incidents" >
+        <ion-card (click)="ShowMyReport(incident.report_id)">
+        
+        <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #000000;">Incident Title:</strong> {{incident.title}}</ion-item>
+         
+             <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #F53D3D;">Incident Type:</strong> {{incident.incident_type}}</ion-item>
+           <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #E74C3C;">Incident Time:</strong> {{incident.time}}</ion-item>
+         
+          <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"> <strong style="color: #F53D3D;">Incident date:</strong>{{incident.date}}</ion-item>
+           <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"> <strong style="color:#F53D3D ;">Incident description:</strong>{{incident.description}}</ion-item>
+           
+       </ion-card>
+       
+      
+          
+           
+      
+        </ion-item>
+        
+    </ion-list>
+</ion-content>

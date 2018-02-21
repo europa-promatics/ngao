@@ -1,0 +1,25 @@
+<!--
+  Generated template for the Listroutefav page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Track List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding padding style="background-color:rgba(0, 0, 0, 0.15)">
+ <h3>Pick Your directions</h3>
+ <ion-list no-lines style="color:#F9B1B2;">
+  <ion-item *ngFor="let routedata of routedatas">
+ <ion-card (click)="listroutenext(routedata.lnglatdata,routedata.distancevscurrentspeed,routedata.distancevsspeedlimit,routedata.routename)">
+  <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #000000;">Route-no:</strong> {{routedata.id}}</ion-item>
+      <ion-item text-wrap style="padding-left: 0px; float: right; width: 84%;"><strong style="color: #000000;">My Route Name:</strong> {{routedata.routename}}</ion-item>
+   </ion-card>
+ </ion-item>
+ </ion-list>
+</ion-content>

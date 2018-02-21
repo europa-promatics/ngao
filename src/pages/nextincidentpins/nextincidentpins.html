@@ -1,0 +1,480 @@
+<!--
+  Generated template for the Nextincidentpins page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Detail Incident Pins</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div *ngIf="posshow==true">
+<ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Reports:
+        </ion-label>
+       <ion-input value="{{reports1}}" disabled> </ion-input>
+      
+    </ion-item>
+<ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Officer Name:
+        </ion-label>
+       <ion-input value="{{officer_name1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Officer Identity:
+        </ion-label>
+       <ion-input value="{{officer_identity1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Date:
+        </ion-label>
+       <ion-input value="{{date}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Time:
+        </ion-label>
+       <ion-input value="{{times}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Age:
+        </ion-label>
+       <ion-input value="{{age1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Type of Officer:
+        </ion-label>
+       <ion-input value="{{type_of_officer1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Gender:
+        </ion-label>
+       <ion-input value="{{gender1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Race:
+        </ion-label>
+       <ion-input value="{{race1}}" disabled> </ion-input>
+      
+    </ion-item>
+ <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Title:
+        </ion-label>
+       <ion-input value="{{title}}" disabled> </ion-input>
+      
+    </ion-item>
+   
+    <p style="text-align: center;color: #F53D3D">Incident Pictures:</p>
+    <ion-item>
+
+  <!--  <ion-col>
+  
+   <ion-row>
+     <div class="list">
+       <ion-card>
+
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image1}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+      </ion-card>
+       
+      </div>
+   
+    </ion-row> 
+
+  
+      <ion-row>
+  
+     <div class="list">
+      <ion-card>
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image2}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+        </ion-card> 
+      </div>
+       
+    </ion-row> 
+  
+ </ion-col> -->
+<ion-row>
+ <ion-col>
+ 
+     
+     <div class="list">
+     <ion-card>
+  
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image3}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+      </ion-card>
+      </div> 
+      
+ 
+   
+ </ion-col>
+ <ion-col>
+ 
+       
+        <div class="list">
+        <ion-card>
+
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image4}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+         </ion-card>
+      </div>
+     
+
+   
+    </ion-col>
+</ion-row>
+    </ion-item>
+    </div>
+
+
+
+
+
+
+
+<div *ngIf="posshow==false">
+<ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Reports:
+        </ion-label>
+       <ion-input value="{{reports1}}" disabled> </ion-input>
+      
+    </ion-item>
+<ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Officer Name:
+        </ion-label>
+       <ion-input value="{{officer_name1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Officer Identity:
+        </ion-label>
+       <ion-input value="{{officer_identity1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Date:
+        </ion-label>
+       <ion-input value="{{date}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Time:
+        </ion-label>
+       <ion-input value="{{times}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Age:
+        </ion-label>
+       <ion-input value="{{age1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Type of Officer:
+        </ion-label>
+       <ion-input value="{{type_of_officer1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Gender:
+        </ion-label>
+       <ion-input value="{{gender1}}" disabled> </ion-input>
+      
+    </ion-item>
+    <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Race:
+        </ion-label>
+       <ion-input value="{{race1}}" disabled> </ion-input>
+      
+    </ion-item>
+ <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>What happened?:
+        </ion-label>
+       <ion-input value="{{incident1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+ <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Incident Reason:
+        </ion-label>
+       <ion-input value="{{incident_reason1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>What happened?:
+        </ion-label>
+       <ion-input value="{{incident1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Citation:
+        </ion-label>
+       <ion-input value="{{citation1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Fine:
+        </ion-label>
+       <ion-input value="{{fine1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Arrest:
+        </ion-label>
+       <ion-input value="{{arrest1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Charges:
+        </ion-label>
+       <ion-input value="{{charge1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Jail Time:
+        </ion-label>
+       <ion-input value="{{jail_time1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Property damage:
+        </ion-label>
+       <ion-input value="{{property_damage1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>What cause?:
+        </ion-label>
+       <ion-input value="{{damage1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Property Confiscation:
+        </ion-label>
+       <ion-input value="{{property_confiscation1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Property taken:
+        </ion-label>
+       <ion-input value="{{property_taken1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Total lost:
+        </ion-label>
+       <ion-input value="{{total_lost1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Warning:
+        </ion-label>
+       <ion-input value="{{warning1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Death:
+        </ion-label>
+       <ion-input value="{{death1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Injury:
+        </ion-label>
+       <ion-input value="{{injury1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Describe Injury:
+        </ion-label>
+       <ion-input value="{{describe_injury1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+ <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Jail Time:
+        </ion-label>
+       <ion-input value="{{jail_time1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+
+     <ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>Injury Reason:
+        </ion-label>
+       <ion-input value="{{injury_reason1}}" disabled> </ion-input>
+      
+    </ion-item>
+
+
+
+
+
+
+    <p style="text-align: center;color: #F53D3D">Incident Pictures:</p>
+    <ion-item>
+  <!--  <ion-col>
+  
+   <ion-row>
+     <div class="list">
+       <ion-card>
+
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image1}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+      </ion-card>
+       
+      </div>
+   
+    </ion-row> 
+
+  
+      <ion-row>
+  
+     <div class="list">
+      <ion-card>
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image2}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+        </ion-card> 
+      </div>
+       
+    </ion-row> 
+  
+ </ion-col> -->
+ <ion-row>
+ <ion-col>
+ 
+
+     
+     <div class="list">
+     <ion-card>
+  
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image3}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+      </ion-card>
+      </div> 
+      </ion-col>
+<ion-col>
+       
+        <div class="list">
+        <ion-card>
+
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image4}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+         </ion-card>
+      </div>
+     
+   </ion-col>
+   </ion-row>
+    </ion-item>
+    </div>
+
+
+
+
+</ion-content>

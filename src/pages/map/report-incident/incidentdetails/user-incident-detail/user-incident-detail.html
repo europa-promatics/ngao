@@ -1,0 +1,115 @@
+<!--
+  Generated template for the UserIncidentDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>IncidentDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-item style="float: left;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>
+        </ion-label>
+       <ion-input value="{{title}}" disabled> </ion-input>
+       <!--  {{name}} -->
+    </ion-item>
+    <ion-item style="width: 100%;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="pin" item-left></ion-icon>
+        </ion-label>
+        <ion-input value="{{incidenttype}}" disabled> </ion-input>
+    </ion-item>
+     <ion-item style="width: 100%;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+          <ion-icon name="clock"></ion-icon>
+        </ion-label>
+        <ion-input value="{{time}}" disabled> </ion-input>
+    </ion-item>
+    <ion-item style="width: 100%;">
+     <ion-label   style="background-color:transparent; color:#E74C3C">
+          <ion-icon name="calendar"></ion-icon>
+        </ion-label>
+        <ion-input value="{{date}}" disabled> </ion-input>
+    </ion-item>
+    <ion-item style="width: 100%;">
+       <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="chatboxes" item-left></ion-icon>
+        </ion-label>
+        <ion-textarea rows="2" value="{{description}}" disabled> 
+
+        </ion-textarea>
+       
+    </ion-item>
+    <p style="text-align: center;color: #F53D3D">Incident Pictures:</p>
+    <ion-item>
+<ion-row>
+   <ion-col>
+  
+   <ion-row>
+     <div class="list">
+       <ion-card>
+
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image1}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+      </ion-card>
+       
+      </div>
+   
+    </ion-row> 
+
+  
+      <ion-row>
+  
+     <div class="list">
+      <ion-card>
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image2}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+        </ion-card> 
+      </div>
+       
+    </ion-row> 
+  
+ </ion-col>
+ <ion-col>
+ 
+    <ion-row>
+     
+     <div class="list">
+     <ion-card>
+       <!--  <ion-avatar style="width:100%;margin-left:45%;"> -->
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image3}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+      </ion-card>
+      </div> 
+      
+    </ion-row>
+   
+ 
+    <ion-row>
+       
+        <div class="list">
+        <ion-card>
+       <!--  <ion-avatar style="width:100%;margin-left:45%;"> -->
+       <a class="item item-avatar">
+           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image4}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+           </a>
+         </ion-card>
+      </div>
+     
+    </ion-row>
+   
+    </ion-col>
+    </ion-row>
+    </ion-item>
+</ion-content>

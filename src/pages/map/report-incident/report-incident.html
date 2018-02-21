@@ -1,0 +1,862 @@
+
+
+<ion-header>
+   <ion-navbar color="danger">
+      <ion-title>Report Incident</ion-title>
+      <ion-buttons end>
+         <button ion-button (click)="submit()">
+            <ion-icon name="cog"></ion-icon>
+            Report
+         </button>
+        
+      </ion-buttons>
+   </ion-navbar>
+</ion-header>
+<ion-content padding style="background: url(img/bg-img.png) no-repeat center;background-size:cover;" >
+
+ <div class="report-icons">
+
+   <div id="a1" class="reporttap" (tap)="tapEvent($event)">
+<img src="assets/img/ngao icons/Ngao icons png/001-placeholder-1.png" class="reporttap-img" >
+</div>
+
+<div id="a1" class="reporttap bottom-icon" (click)="deletedrop()">
+      <img src="assets/img/001-arrows.png"  class="reporttap-img"  >
+   </div>
+
+
+
+
+
+
+       <div id="a1"  class="reporttap middle-icon" (click)="info()"       >
+      <img src="assets/img/005-pin.png" class="reporttap-img" >
+   </div>
+
+
+
+   </div>
+   <div *ngIf="Popup==true" class="popupdiv" >
+      <ion-icon class="icondiv" name="close" (click)="close1()"></ion-icon>
+      <p class="headingdiv">Type of Mode</p>
+      <ion-row>
+         <ion-col>
+            <div id="a2" class="divbox">
+               <img  class="divimg" src="assets/img/mode/007-police-car.svg" (click)="modes(1)">
+               <p class="divp">Automobile</p>
+            </div>
+         </ion-col>
+         <ion-col>
+            <div id="a3" class="divbox" >
+               <img class="divimg" src="assets/img/mode/006-motorcycle.svg" (click)="modes(2)">
+               <p class="divp" >Motorcycle</p>
+            </div>
+         </ion-col>
+      </ion-row>
+      <ion-row>
+         <ion-col>
+            <div id="a4" class="divbox">
+               <img  class="divimg" src="assets/img/mode/005-bicycle.svg" (click)="modes(3)">
+               <p class="divp" >Bicycle</p>
+            </div>
+         </ion-col>
+         <ion-col>
+            <div id="a5" class="divbox">
+               <img  class="divimg" src="assets/img/mode/004-pedestrian-walking.svg" (click)="modes(4)">
+               <p class="divp" >On Foot</p>
+            </div>
+         </ion-col>
+      </ion-row>
+   </div>
+   <div *ngIf="Popup2==true" class="popupdiv">
+      <ion-icon class="icondiv" name="close" (click)="close2()"></ion-icon>
+      <p class="headingdiv" >Moving?</p>
+      <ion-row>
+         <ion-col>
+            <div id="b1" class="divbox">
+               <img  class="divimg" src="assets/img/Moving/002-moving.svg" (click)="mode1(1)">
+               <p class="divp">Moving</p>
+            </div>
+         </ion-col>
+         <ion-col>
+            <div id="b2" class="divbox">
+               <img  class="divimg" src="assets/img/Moving/003-man-on-spotlight.svg" (click)="mode1(2)">
+               <p class="divp" >Stationary</p>
+            </div>
+         </ion-col>
+      </ion-row>
+   </div>
+   <div *ngIf="Popup3==true" class="popupdiv" >
+      <ion-icon  class="icondiv" name="close" (click)="close3()"></ion-icon>
+      <p class="headingdiv" >Hidden?</p>
+      <ion-row>
+         <ion-col>
+            <div id="c1"  class="divbox">
+               <img  class="divimg"  src="assets/img/hidden/008-shield.svg" (click)="mode2(1)">
+               <p class="divp" >Visible</p>
+            </div>
+         </ion-col>
+         <ion-col>
+            <div id="c2" class="divbox">
+               <img  class="divimg"  src="assets/img/hidden/001-spy.svg" (click)="mode2(2)">
+               <p class="divp"
+                  >Hidden</p>
+            </div>
+         </ion-col>
+      </ion-row>
+   </div>
+   <div *ngIf="Popup4==true" class="popupdiv">
+      <ion-icon class="othericondiv" name="close"  (click)="close4()"></ion-icon>
+      <p  class="otheheadingdiv" >Other Information</p>
+      <div id="d" class="otherdivbox">
+         <img class="otherdivimg"  src="assets/img/001-interface.png" (click)="mode3()">
+         <p 
+            class="divp"
+            >Comment</p>
+      </div>
+      <div  style="margin-left: 71px;
+         margin-top: 23px;">
+         <button  ion-button color="dark" outline (click)="SaveSkip()">Skip&Save</button>
+      </div>
+   </div>
+   <div *ngIf="Popup5==true" class="popupdiv">
+      <ion-icon class="icondiv" name="close" (click)="close5()"></ion-icon>
+      <p  class="headingdiv" >Leave Comment</p>
+      <div id="d" style="background-color: rgb(255, 255, 255);
+         border-radius: 3px;
+         height: 79px;
+         margin-left: 53px;
+         margin-top: 32px;
+         width: 157px;">
+         <ion-textarea type="text" style="background-color:white"  [(ngModel)]="comment1">
+         <ion-label   style="background-color:transparent; color:#E74C3C">
+            <ion-icon name="chatboxes" item-left></ion-icon>
+         </ion-label>
+         </ion-textarea>
+      </div>
+      <div  style="margin-left: 91px;
+         margin-top: 25px;">
+         <button  ion-button color="dark" outline (click)="Save()">Save</button>
+      </div>
+   </div>
+   <div  *ngIf="Popup6==true" class="msgpopupdiv" >
+      <ion-icon class="msgicondiv" name="close" (click)="close6()"></ion-icon>
+      <p style="margin-left: 16px; margin-top: 11px;">KIJ345:"In the street i see the officer"</p>
+      <button  style="margin-left:60px;color:#00A9FF" ion-button clear (click)="yes()">Yes</button>
+      <button style="color:#00A9FF" ion-button clear (click)="no()">No</button>
+   </div>
+   <div  *ngIf="Popup7==true" class="msgpopupdiv" >
+      <ion-icon class="msgicondiv" name="close" (click)="close7()"></ion-icon>
+      <p style="margin-left: 16px; margin-top: 11px;">KIJ345:"In the street i see the officer"</p>
+      <button  style="margin-left:60px;color:#00A9FF" ion-button clear (click)="yes1()">Yes</button>
+      <button style="color:#00A9FF" ion-button clear (click)="no1()">No</button>
+   </div>
+   <div *ngIf="Popup8==true" class="hopupdiv">
+      <ion-icon class="incidentothericondiv" name="ios-close"  (click)="close8()"></ion-icon>
+      <p  class="incidentotheheadingdiv" >Incident experience</p>
+      <ion-row>
+         <ion-col>
+            <div id="i1"  class="incidentdivboxpositive">
+               <img  class="incidentdivimg"  src="assets/img/002-signs-2.png" (click)="incidentmodes(1)" >
+               <p class="incidentdivp" >Positive</p>
+            </div>
+         </ion-col>
+         <ion-col>
+            <div id="i2" class="incidentdivboxnegative">
+               <img  class="incidentdivimg"  src="assets/img/001-line.png" (click)=incidentmodes(2) >
+               <p class="incidentdivp"
+                  >Negative</p>
+            </div>
+         </ion-col>
+      </ion-row>
+   </div>
+   <div *ngIf="Popup9==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-close"  (click)="close9()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >What happened?</p>
+      <ion-list radio-group [(ngModel)]="pet" (ionChange)="petChange($event)">
+      <ion-item>
+         <ion-radio value="notfine"  ></ion-radio>
+         <ion-label>Could have but did not fine</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-radio value="help" ></ion-radio>
+         <ion-label>Helped Me</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-radio value="impacted" ></ion-radio>
+         <ion-label>Solved a crime that impacted</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-radio value="other" ></ion-radio>
+         <ion-label>Other</ion-label>
+      </ion-item>
+      </ion-list>
+   </div>
+   <div *ngIf="Popup10==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-close"  (click)="close10()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Where?</p>
+      <div id="p1" class="otherdivbox1">
+         <img class="otherdivimg"  src="assets/img/001-placeholder.png" (click)="modes3()" >
+         <p 
+            class="divp"
+            >Tap Location</p>
+      </div>
+   </div>
+   <div *ngIf="Popup11==true" class="hopupdiv1">
+      <!--  <ion-icon class="incidentothericondiv100" name="close"  (click)="close11()"></ion-icon> -->
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="NextSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >When?</p>
+      <ion-item style="color:#000;width:100%;float: left; ">
+         <ion-label   style="background-color:transparent; color:#00A9FF">
+            <ion-icon name="clock" item-left></ion-icon>
+         </ion-label>
+         <ion-datetime  displayFormat="h:mm A" pickerFormat="h mm A"  [(ngModel)]="time1" >
+         </ion-datetime>
+      </ion-item>
+      <ion-item style="background-color:transparent; color:#000">
+         <ion-label   style="background-color:transparent; color:#00A9FF">
+            <ion-icon name="calendar" item-left></ion-icon>
+         </ion-label>
+         <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" placeholder="Incident date" [(ngModel)]="date1" >
+         </ion-datetime>
+      </ion-item>
+      <!-- <div  style="margin-left: 91px;
+         margin-top: 25px;">
+         <button  ion-button color="danger" outline (click)="NextSave()">Save</button>
+         </div> -->
+   </div>
+   <div *ngIf="Popup12==true" class="hopupdiv3">
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="checkcheck()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Identify the officer</p>
+      <ion-item  style="background-color:transparent; color:#768284">
+         <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="officer_name" placeholder="Type First Last or Badge no" ></ion-input>
+      </ion-item>
+      <ion-item >
+         <ion-label text-wrap>
+            Identify The Officer 
+         </ion-label>
+         <ion-select style="background-color:transparent; color:black ;float:left;" [(ngModel)]="officer_identity">
+         <ion-option  value="{{officers}}" style="background-color:transparent; color:black" *ngFor="let officers of officer">{{officers}}</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-item >
+         <ion-label text-wrap>
+            Percieved Race 
+         </ion-label>
+         <ion-select style="background-color:transparent; color:black;float:left;" [(ngModel)]="race_identity">
+              <ion-option value="White" checked="true" style="background-color:transparent; color:#768284">White</ion-option>
+            <ion-option value="Black" style="background-color:transparent; color:#768284">Black</ion-option>
+            <ion-option value="Latino" style="background-color:transparent; color:#768284">Latino</ion-option>
+            <ion-option value="Asian" style="background-color:transparent; color:#768284">Asian</ion-option>
+              <ion-option value="Other" style="background-color:transparent; color:#768284">Other</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-list radio-group [(ngModel)]="gender" (ionChange)="genderChange(lol)">
+      <ion-item>
+         <ion-radio value="Male"  ></ion-radio>
+         <ion-label>Male</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-radio value="Female" ></ion-radio>
+         <ion-label>Female</ion-label>
+      </ion-item>
+      </ion-list>
+      <ion-item>
+         <ion-label text-wrap>
+            AGE
+         </ion-label>
+         <ion-select style="background-color:transparent; color:#768284 ;float:left;" [(ngModel)]="age" >
+             <ion-option value="18-25" checked="true" style="background-color:transparent; color:#768284">18-25</ion-option>
+         <ion-option value="25-30" style="background-color:transparent; color:#768284">25-30</ion-option>
+         <ion-option value="30-35" style="background-color:transparent; color:#768284">30-35</ion-option>
+         <ion-option value="35-40" style="background-color:transparent; color:#768284">35-40</ion-option>
+         <ion-option value="45-50" style="background-color:transparent; color:#768284">45-50</ion-option>
+         <ion-option value="50-55" style="background-color:transparent; color:#768284">50-55</ion-option>
+         <ion-option value=">55" style="background-color:transparent; color:#768284">>55</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-item>
+         <ion-label text-wrap>
+            Type of Officer
+         </ion-label>
+         <ion-select style="background-color:transparent; color:#768284 ;float:left;" [(ngModel)]="type_of_officer" >
+         <ion-option value="City" style="background-color:transparent; color:#768284">City</ion-option>
+         <!-- <ion-option value="Police" style="background-color:transparent; color:#768284">Police</ion-option> -->
+         <ion-option value="Country_Sherif" style="background-color:transparent; color:#768284">County Sherriff</ion-option>
+         <ion-option value="Highway_Patrol" style="background-color:transparent; color:#768284">Highway Patrol</ion-option>
+         <ion-option value="Other" style="background-color:transparent; color:#768284">Other</ion-option>
+         </ion-select>
+      </ion-item>
+   </div>
+   <div *ngIf="Popup13==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-close"  (click)="close13()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Where?</p>
+      <div id="p1" class="otherdivbox1">
+         <img class="otherdivimg"  src="assets/img/001-placeholder.png" (click)="negativemodes3()" >
+         <p 
+            class="divp1"
+            >Tap Location</p>
+      </div>
+   </div>
+   <div *ngIf="Popup14==true" class="hopupdiv1">
+    
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="NextnextSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >When?</p>
+      <ion-item style="color:#000;width:100%;float: left; ">
+         <ion-label   style="background-color:transparent; color:#00A9FF">
+            <ion-icon name="clock" item-left></ion-icon>
+         </ion-label>
+         <ion-datetime  displayFormat="h:mm A" pickerFormat="h mm A"  [(ngModel)]="time1" >
+         </ion-datetime>
+      </ion-item>
+      <ion-item style="background-color:transparent; color:#000">
+         <ion-label   style="background-color:transparent; color:#00A9FF">
+            <ion-icon name="calendar" item-left></ion-icon>
+         </ion-label>
+         <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" placeholder="Incident date" [(ngModel)]="date1" >
+         </ion-datetime>
+      </ion-item>
+ 
+   </div>
+   <div *ngIf="Popup15==true" class="hopupdiv3">
+  
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="NextnextnextSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv2" >How Incident Intitate
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="incident" placeholder="Describe incident" ></ion-input>
+         </ion-item>
+         <ion-list radio-group [(ngModel)]="incident_reason" >
+         <ion-item>
+            <ion-radio value="Stop and Frisk"  ></ion-radio>
+            <ion-label>Stop and Frisk</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="Traffic Stop" ></ion-radio>
+            <ion-label>Traffic Stop</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="Came to my home" ></ion-radio>
+            <ion-label>Came to my home</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="I called the police" ></ion-radio>
+            <ion-label>I called the police</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="Other" ></ion-radio>
+            <ion-label>Other</ion-label>
+         </ion-item>
+         </ion-list>
+         <!--   <div  style="margin-left: 35%;
+            margin-top: -3%;">
+            <button  ion-button color="danger" outline (click)="NextnextnextSave()">Save</button>
+            </div> -->
+   </div>
+   <div *ngIf="Popup16==true" class="hopupdiv4">
+      <ion-icon class="incidentothericondiv100" name="ios-close"  (click)="close16()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Result of Incident
+      <p>
+         <ion-list radio-group [(ngModel)]="pet2" (ionChange)="petChange3($event)">
+         <ion-item>
+            <ion-radio value="Warning"  ></ion-radio>
+            <ion-label>Warning</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="Ticket" ></ion-radio>
+            <ion-label>Ticket/Citation</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="Fine" ></ion-radio>
+            <ion-label>Fine</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="Arrest" ></ion-radio>
+            <ion-label>Arrest</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="damage" ></ion-radio>
+            <ion-label>Property damage</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="confiscation" ></ion-radio>
+            <ion-label>Property Confiscation</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="injury" ></ion-radio>
+            <ion-label>Injury</ion-label>
+         </ion-item>
+         <ion-item>
+            <ion-radio value="death" ></ion-radio>
+            <ion-label>Death</ion-label>
+         </ion-item>
+         </ion-list>
+   </div>
+   <div *ngIf="Popup17==true" class="hopupdiv1">
+      <!-- <ion-icon class="incidentothericondiv100" name="close"  (click)="close17()"></ion-icon> -->
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="TICKETSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Ticket/Citation
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="citation" placeholder="Citation number" ></ion-input>
+         </ion-item>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="fine" placeholder="Fine amount" ></ion-input>
+         </ion-item>
+         
+   </div>
+   <div *ngIf="Popup18==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="FineSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Fine
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="number" style="background-color:transparent; color:#768284"  [(ngModel)]="fine" placeholder="Fine amount" ></ion-input>
+         </ion-item>
+    
+   </div>
+   <div *ngIf="Popup19==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="chargeSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Arrest
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="number" style="background-color:transparent; color:#768284"  [(ngModel)]="charge" placeholder="Charge" ></ion-input>
+         </ion-item>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="number" style="background-color:transparent; color:#768284"  [(ngModel)]="jail_time" placeholder="Jail time(hrs/days) " ></ion-input>
+         </ion-item>
+        
+   </div>
+   <div *ngIf="Popup20==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="damageSave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Property Damage
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="damage" placeholder="Damage" ></ion-input>
+         </ion-item>
+         <!-- <div  style="margin-left: 91px;
+            margin-top: 25px;">
+            <button  ion-button color="danger" outline (click)="damageSave()">Save</button>
+            </div> -->
+   </div>
+   <div *ngIf="Popup21==true" class="hopupdiv1">
+      <!--   <ion-icon class="incidentothericondiv100" name="close"  (click)="close21()"></ion-icon> -->
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="propertySave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Property Confiscation
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="property_taken" placeholder="Property taken" ></ion-input>
+         </ion-item>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="number" style="background-color:transparent; color:#768284"  [(ngModel)]="total_lost" placeholder="Total lost($)" ></ion-input>
+         </ion-item>
+         <!-- <div  style="margin-left: 91px;
+            margin-top: 25px;">
+            <button  ion-button color="danger" outline (click)="propertySave()">Save</button>
+            </div> -->
+   </div>
+   <div *ngIf="Popup22==true" class="hopupdiv1">
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="injurySave()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Injury
+      <p>
+         <ion-item  style="background-color:transparent; color:#768284">
+            <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="describe_injury" placeholder="Describe Injury" ></ion-input>
+         </ion-item>
+         <ion-item>
+            <ion-label text-wrap>
+               Injury Reason
+            </ion-label>
+            <ion-select style="background-color:transparent; color:#768284 ;float:left;" [(ngModel)]="injury_reason" >
+            <ion-option value="Teased" checked="true" style="background-color:transparent; color:#768284">Teased</ion-option>
+            <ion-option value="Shot" style="background-color:transparent; color:#768284">Shot</ion-option>
+            <ion-option value="Beaten" style="background-color:transparent; color:#768284">Beaten</ion-option>
+            <ion-option value="Clubbed" style="background-color:transparent; color:#768284">Clubbed</ion-option>
+            </ion-select>
+         </ion-item>
+        
+   </div>
+   <div *ngIf="Popup23==true" class="hopupdiv4">
+      <ion-icon class="incidentothericondiv100" name="ios-checkmark"  (click)="checkcheckcheck()"></ion-icon>
+      <p  class="incidentotheheadingdiv1" >Identify the officer</p>
+      <ion-item  style="background-color:transparent; color:#768284">
+         <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="officer_name" placeholder="Type First Last or Badge no" ></ion-input>
+      </ion-item>
+      <ion-item >
+         <ion-label text-wrap>
+            Identify The Officer 
+         </ion-label>
+         <ion-select style="background-color:transparent; color:black ;float:left;" [(ngModel)]="officer_identity">
+         <ion-option  value="{{officers}}" style="background-color:transparent; color:black" *ngFor="let officers of officer">{{officers}}</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-item >
+         <ion-label text-wrap>
+            Percieved Race 
+         </ion-label>
+         <ion-select style="background-color:transparent; color:black;float:left;" [(ngModel)]="race_identity">
+       
+            <ion-option value="White" checked="true" style="background-color:transparent; color:#768284">White</ion-option>
+            <ion-option value="Black" style="background-color:transparent; color:#768284">Black</ion-option>
+            <ion-option value="Latino" style="background-color:transparent; color:#768284">Latino</ion-option>
+            <ion-option value="Asian" style="background-color:transparent; color:#768284">Asian</ion-option>
+              <ion-option value="Asian" style="background-color:transparent; color:#768284">Other</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-list radio-group [(ngModel)]="gender" (ionChange)="genderChange(lol)">
+      <ion-item>
+         <ion-radio value="Male" ></ion-radio>
+         <ion-label>Male</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-radio value="Female" ></ion-radio>
+         <ion-label>Female</ion-label>
+      </ion-item>
+      </ion-list>
+      <ion-item>
+         <ion-label text-wrap>
+            AGE
+         </ion-label>
+         <ion-select style="background-color:transparent; color:#768284 ;float:left;" [(ngModel)]="age" >
+         <ion-option value="18-25" checked="true" style="background-color:transparent; color:#768284">18-25</ion-option>
+         <ion-option value="25-30" style="background-color:transparent; color:#768284">25-30</ion-option>
+         <ion-option value="30-35" style="background-color:transparent; color:#768284">30-35</ion-option>
+         <ion-option value="35-40" style="background-color:transparent; color:#768284">35-40</ion-option>
+         <ion-option value="45-50" style="background-color:transparent; color:#768284">45-50</ion-option>
+         <ion-option value="50-55" style="background-color:transparent; color:#768284">50-55</ion-option>
+         <ion-option value=">55" style="background-color:transparent; color:#768284">>55</ion-option>
+         </ion-select>
+      </ion-item>
+      <ion-item>
+         <ion-label text-wrap>
+            Type of Officer
+         </ion-label>
+         <ion-select style="background-color:transparent; color:#768284 ;float:left;" [(ngModel)]="type_of_officer" >
+         <ion-option value="City" style="background-color:transparent; color:#768284">City</ion-option>
+         <ion-option value="Police" style="background-color:transparent; color:#768284">Police</ion-option>
+         <ion-option value="Country_Sherif" style="background-color:transparent; color:#768284">County Sheriff</ion-option>
+         <ion-option value="Highway_Patrol" style="background-color:transparent; color:#768284">Highway Patrol</ion-option>
+         <ion-option value="Other" style="background-color:transparent; color:#768284">Other</ion-option>
+         </ion-select>
+      </ion-item>
+   </div>
+   <flash-card  style="
+      position: absolute;
+      top: 12%;
+      z-index: 1000;" *ngIf="flashcardmap==true">
+      <div class="flash-card-front" style="float: left;width: 100%;" >
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Title:{{title}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Officer Name:{{officer_name1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Officer Identity:{{officer_identity1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Date:{{date}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Time:{{times}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Reports:{{reports1}}</p>
+               </div>
+            </li>
+         </ul>
+            </div>
+      <div class="flash-card-back" >
+         <ion-icon class="incidentothericondiv1" name="ios-close"  style="margin-top: -81px;" (click)="close45()"></ion-icon>
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Age:{{age1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Type of Officer:{{type_of_officer1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Gender:{{gender1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Race:{{race1}}</p>
+               </div>
+            </li>
+         </ul>
+         <button ion-button clear style="margin-left:37%" (click)="moreimage2()" >More</button>
+        
+      </div>
+   </flash-card>
+   <flash-card  style="
+      position: absolute;
+      top: 12%;
+      z-index: 1000;" *ngIf="flashcardmap1==true">
+      <div class="flash-card-front" >
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Title:{{title}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Officer Name:{{officer_name1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Officer Identity:{{officer_identity1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Date:{{date}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Time:{{times}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Reports:{{reports1}}</p>
+               </div>
+            </li>
+         </ul>
+       
+      </div>
+      <div class="flash-card-back" >
+         <ion-icon class="incidentothericondiv1" name="more"  style="margin-top: -81px;" (click)="more()"></ion-icon>
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Age:{{age1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Type of Officer:{{type_of_officer1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Gender:{{gender1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Race:{{race1}}</p>
+               </div>
+            </li>
+         </ul>
+      </div>
+     
+   </flash-card>
+
+   <flash-card  style="
+      position: absolute;
+      top: 12%;
+      z-index: 1000;" *ngIf="flashcardmap2==true">
+      <div class="flash-card-front" >
+     
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">What happened?:{{incident1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Incident Reason:{{incident_reason1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Citation:{{citation1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Fine:{{fine1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Arrest:{{arrest1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Charges:{{charge1}}</p>
+               </div>
+            </li>
+         </ul>
+         
+      </div>
+      <div class="flash-card-back" >
+         <ion-icon class="incidentothericondiv108" name="more" style="margin-top: -81px;" (click)="close102()"></ion-icon>
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Jail Time:{{jail_time1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Property damage:{{property_damage1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">What cause?:{{damage1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Property Confiscation:{{property_confiscation1}}</p>
+               </div>
+            </li>
+         </ul>
+         
+      </div>
+   </flash-card>
+   <flash-card  style="
+      position: absolute;
+      top: 12%;
+      z-index: 1000;" *ngIf="flashcardmap3==true">
+      <div class="flash-card-front" >
+         <!-- <ion-icon class="incidentothericondiv1" name="close"  (click)="close102()"></ion-icon>
+            <strong style="text-align:center;">Reports:{{reports1}}</strong> -->
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Property taken:{{property_taken1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Total lost{{total_lost1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Warning:{{warning1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Death:{{death1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Injury:{{injury1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Describe Injury:{{describe_injury1}}</p>
+               </div>
+            </li>
+         </ul>
+     
+      </div>
+      <div class="flash-card-back" >
+         <ion-icon class="incidentothericondiv108" name="ios-close" style="margin-top: -81px;" (click)="close103()"></ion-icon>
+         <ul type="none" style="padding: 10px;margin: 0;">
+            <li>
+               <div class="">
+                  <p style="color:white ">Jail Time:{{jail_time1}}</p>
+               </div>
+            </li>
+            <li>
+               <div class="">
+                  <p style="color:white ">Injury Reason:{{injury_reason1}}</p>
+               </div>
+            </li>
+         </ul>
+         <button ion-button clear style="margin-left: 37%;" (click)="moreimage()">More</button>
+     
+      </div>
+   </flash-card>
+   <flash-card  style="
+      position: absolute;
+      top: 12%;
+      z-index: 1000;" *ngIf="flashcardmap4==true">
+      <div class="flash-card-front" >
+         <ion-item>
+            <ion-row>
+               <ion-col>
+                  <ion-row>
+                     <div class="list">
+                        <ion-card>
+                           <a class="item item-avatar">
+                           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image1}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+                           </a>
+                        </ion-card>
+                     </div>
+                  </ion-row>
+                  <ion-row>
+                     <div class="list">
+                        <ion-card>
+                           <a class="item item-avatar">
+                           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image2}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+                           </a>
+                        </ion-card>
+                     </div>
+                  </ion-row>
+               </ion-col>
+            </ion-row>
+         </ion-item>
+      </div>
+      <div class="flash-card-back" >
+         <ion-item>
+            <ion-row>
+               <ion-col>
+                  <ion-row>
+                     <div class="list">
+                        <ion-card>
+                           <a class="item item-avatar">
+                           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image3}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+                           </a>
+                        </ion-card>
+                     </div>
+                  </ion-row>
+                  <ion-row>
+                     <div class="list">
+                        <ion-card>
+                           <a class="item item-avatar">
+                           <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/incident/images/{{image4}}" style="height:100px; width:100px;margin-left: calc(50% - 50px);" >
+                           </a>
+                        </ion-card>
+                     </div>
+                  </ion-row>
+               </ion-col>
+            </ion-row>
+         </ion-item>
+         <button ion-button clear style="margin-left: -47%;" (click)="close110()">Close</button>
+      </div>
+   </flash-card>
+   <div  id="mapp"  > 
+   </div>
+  
+</ion-content>
+

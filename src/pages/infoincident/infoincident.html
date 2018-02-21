@@ -1,0 +1,197 @@
+<!--
+  Generated template for the Infoincident page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+  <ion-buttons end>
+      <button ion-button (click)="hope1()"><ion-icon ios="ios-funnel" name="funnel"></ion-icon></button>
+<!--      <ion-toggle [(ngModel)]="notification" (ionChange)="toggleNotification(e)"></ion-toggle> -->
+     </ion-buttons>
+    <ion-title>Incident Report Pins</ion-title>
+
+  </ion-navbar>
+ 
+</ion-header>
+
+
+<ion-content padding style="background-color:whitesmoke">
+ <ion-fab center middle *ngIf="fabhope==true">
+    <button ion-fab color="danger"> <ion-icon name="search"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary" (click)="hope2()"><p style="font-size:1rem">DAY</p></button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <button ion-fab color="secondary" (click)="hope3()"><p style="font-size:1rem" >MONTH</p></button>
+    </ion-fab-list>
+    <ion-fab-list side="left">
+      <button ion-fab color="light" (click)="hope4()"><p style="font-size:1rem" >WEEK</p></button>
+    </ion-fab-list>
+    <ion-fab-list side="right">
+      <button ion-fab color="dark" (click)="hope5()"><p style="font-size:1rem" >YEAR</p></button>
+    </ion-fab-list>
+</ion-fab>
+<div *ngIf="divhope==true">
+
+<div   style="background-color:white; height: 13%;
+    width: 100%; margin-bottom: 54px;" *ngFor="let incidentpin of inci; let i = index " (click)="incidenttap(incidentpin.id)">
+<div style="height: 100%; width: 108px;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+  <p style="text-align:center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Title:</strong>{{incidentpin.title}}</p>
+</div>
+<div style="height: 100%;   width: 66.6%;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+ <p style="text-align: center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Created at:</strong>{{incidentpin.date}}</p>
+<!-- <img src="assets/img/001-time-1.png" style="border-radius: 11%;
+    height: 54px;
+    margin-left: calc(50% - 28px);
+    margin-top: 4px;
+    width: 55px;" (click)="select(incidentpin.id)"> -->
+</div>
+<!-- <div style="height: 100%; width: 108px;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+
+    <img src="assets/img/001-signs-1.png" style="border-radius: 11%;
+    height: 54px;
+    margin-left: calc(50% - 28px);
+    margin-top: 4px;
+    width: 55px;" (click)="select1(incidentpin.id)">
+</div> -->
+</div>
+
+</div>
+<div  *ngIf="divhope1==true">
+<p></p>
+  <ion-toggle color="danger" style="  left: 1%;
+    top: -1px;" [(ngModel)]="notification" (ionChange)="toggleNotification()" ></ion-toggle>
+    <button  style="    margin-bottom: 12px;
+    margin-left: 79%;
+    margin-top: -7%;" ion-button outline color="danger" (click)="Saved1()">Save</button>
+<div *ngFor="let days of day"  style="background-color:white; height: 13%;
+    width: 100%; margin-bottom: 72px;  margin-bottom: 73px;" (click)="incidenttap(days.id)">
+<div style="height: 100%; width: 108px;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+  <p style="text-align:center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Title:</strong>{{days.title}}</p>
+</div>
+<div style="height: 100%;   width: 66.6%;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+ <p style="text-align: center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Created at:</strong>{{days.date}}</p>
+</div>
+</div>
+</div>
+<div  *ngIf="divhope2==true">
+  <ion-toggle color="danger" style="  left: 1%;
+    top: -1px;" [(ngModel)]="notification" (ionChange)="toggleNotification(e)" ></ion-toggle>
+    <button style="    margin-bottom: 12px;
+    margin-left: 79%;
+    margin-top: -7%;" ion-button outline color="danger" (click)="Saved2()">Save</button>
+<div   *ngFor="let months of month"  style="background-color:white; height: 13%;
+    width: 100%; margin-bottom: 72px;  margin-bottom: 73px;" (click)="incidenttap(months.id)">
+<div style="height: 100%; width: 108px;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+  <p style="text-align:center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Title:</strong>{{months.title}}</p>
+</div>
+<div style="height: 100%;   width: 66.6%;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+ <p style="text-align: center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Created at:</strong>{{months.date}}</p>
+</div>
+</div>
+</div>
+<div  *ngIf="divhope3==true">
+  <ion-toggle color="danger" style="  left: 1%;
+    top: -1px;" [(ngModel)]="notification" (ionChange)="toggleNotification(e)" ></ion-toggle>
+    <button style="    margin-bottom: 12px;
+    margin-left: 79%;
+    margin-top: -7%;" ion-button outline color="danger" (click)="Saved3()">Save</button>
+<div *ngFor="let weeks of week"  style="background-color:white; height: 13%;
+    width: 100%; margin-bottom: 72px;  margin-bottom: 73px;"     (click)="incidenttap(weeks.id)">
+<div style="height: 100%; width: 108px;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+  <p style="text-align:center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Title:</strong>{{weeks.title}}</p>
+</div>
+<div style="height: 100%;   width: 66.6%;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+ <p style="text-align: center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Created at:</strong>{{weeks.date}}</p>
+</div>
+</div>
+</div>
+<div  *ngIf="divhope4==true">
+  <ion-toggle  color="danger" style="  left: 1%;
+    top: -1px;" [(ngModel)]="notification" (ionChange)="toggleNotification(e)" ></ion-toggle>
+    <button style="    margin-bottom: 12px;
+    margin-left: 79%;
+    margin-top: -7%;"  ion-button outline color="danger" (click)="Saved4()" >Save</button>
+<div    *ngFor="let years of year"  style="background-color:white; height: 13%;
+    width: 100%; margin-bottom: 72px;  margin-bottom: 73px;" (click)="incidenttap(years.id)">
+<div style="height: 100%; width: 108px;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+  <p style="text-align:center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Title:</strong>{{years.title}}</p>
+</div>
+<div style="height: 100%;   width: 66.6%;  border: 3px solid rgba(0, 169, 255, 0.5);float: left;">
+ <p style="text-align: center;color: rgb(0, 169, 255); margin-top: 19px;"><strong>Created at:</strong>{{years.date}}</p>
+</div>
+</div>
+</div>
+<div  *ngIf="Popup==true" class="msgpopupdiv" >
+    <ion-icon class="msgicondiv" name="checkmark" style="color:rgb(105, 224, 135);margin-bottom: 16px;
+    margin-left: 257px;" (click)="close()"></ion-icon>
+     <p style="color: rgb(105, 224, 135);
+    font-size: 1.7rem;
+    margin-bottom: -1px;
+    margin-top: -25px;
+    text-align: center;">Pick a Day or Week!</p>
+ <div id="b1" class="otherdivbox"   >
+    <p style="color: rgb(255, 255, 255);
+    font-size: 2.2rem;
+    text-align: center;"  (click)="modes(1)"
+>DAY</p>
+</div>
+
+<div id="a3" class="otherdivbox"   >
+    <p style="color: rgb(255, 255, 255);
+    font-size: 2.2rem;
+    text-align: center;" (click)="modes(3)"
+>WEEK</p>
+</div>
+
+<div style=" background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  
+    border-radius: 5px 0 0 5px;
+
+    height: 46px;
+    margin-left: 25px;
+    margin-right: 34%;
+    margin-top: 39%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 31%;">
+                <button ion-button clear icon-only (click)="remove()" style="padding-left:5px;padding-right:5px;z-index:10;float: left; "><ion-icon (click)="remove()" style="color: rgb(105, 224, 135);font-size:1.2em;" name="remove" ></ion-icon></button>
+                <span style="position: absolute;top: 12px;left: 0;right: 0;">{{item_quantity}}</span>
+                <button ion-button clear icon-only (click)="add()" style="padding-left:5px;padding-right:5px;z-index:10;float: right; "><ion-icon (click)="add()" style="color:  rgb(105, 224, 135);font-size:1.2em;" name="add" ></ion-icon></button>
+            </div>
+  </div>
+  <div  *ngIf="Popup1==true" class="msgpopupdiv" >
+    <ion-icon class="msgicondiv" name="checkmark" style="color:rgb(105, 224, 135);margin-bottom: 16px;
+    margin-left: 257px;" (click)="close1()"></ion-icon>
+     <p style="color: rgb(105, 224, 135);
+    font-size: 1.7rem;
+    margin-bottom: -1px;
+    margin-top: -25px;
+    text-align: center;">Pick Pin Status</p>
+ <div id="c1" class="otherdivbox"   >
+    <p style="color: rgb(255, 255, 255);
+    font-size: 2.2rem;
+    text-align: center;" (click)="modes2(1)"  
+>ON</p>
+</div>
+
+<div id="c2" class="otherdivbox"   >
+    <p style="color: rgb(255, 255, 255);
+    font-size: 2.2rem;
+    text-align: center;" (click)="modes2(2)"
+>OFF</p>
+</div>
+
+<p style="margin-left: -6px;
+    color: #EA4335;
+    font-size: 1.7rem;
+    margin-bottom: -1px;
+    margin-top: 127px;
+    text-align: center;
+">*Your Pin will be Toggle by {{total}} minutes</p>
+  </div>
+</ion-content>

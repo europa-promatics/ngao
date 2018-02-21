@@ -1,0 +1,91 @@
+<!--
+  Generated template for the Mind786 page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+   <ion-buttons end>
+   <button ion-button (click)="setting()"><ion-icon name="cog" style="margin:5px"></ion-icon></button>
+     <button ion-button (click)="presentPopover()"> <ion-icon name="star" style="margin:5px;"></ion-icon></button>
+       <button ion-button (click)="nextpin()"> <ion-icon name="add" style="margin:5px;"></ion-icon></button>
+      <button ion-button (click)="submit()"> <ion-icon name="list" style="margin:5px;"></ion-icon></button>
+   </ion-buttons>
+    <ion-title>Record</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<div id="mindmap" ></div>
+<ion-fab left top>
+    <button ion-fab color="danger" (click)="Starttracking()" ><ion-icon name="arrow-dropright"></ion-icon></button>
+     <ion-fab-list side="right">
+      <button ion-button  class="recordbutton" style="max-width: 113%;"  outline>Current Speed:{{roundedspeed}} MPH</button>
+      </ion-fab-list>
+      <ion-fab-list side="bottom">
+      <button ion-button class="recordbutton"   outline>Speed Limit:{{roundedspeedlimit2}} MPH</button>
+       </ion-fab-list>
+       </ion-fab>
+      <ion-fab right top>
+    <button ion-fab color="danger" (click)="stoptracking()" ><ion-icon name="hand"></ion-icon></button>
+    </ion-fab>
+     <div style="
+    height: 31.8%;
+    margin-left: 28px;
+    max-width: 85%;
+    max-height: 27%; background-color: rgba(0, 0, 0, 0);" >
+     <canvas #lineCanvas></canvas>
+    </div>
+       <p style="margin-left: -90%;
+    margin-top: -100%;
+    transform: rotate(-90deg);" *ngIf="tapspeed==true">Speed</p>
+     <ion-icon style="margin-left: 31px;
+    margin-top: -36px;" *ngIf="tapspeed==true" ><img  style="height: 42px;" src="assets/img/001-gps-1.png"  ></ion-icon>
+     <p style="margin-left: 27%;
+   margin-top: 96%;"  *ngIf="tapspeed==true" >Distance:{{roundeddistance}}(miles)</p>
+  <!--  <div style="background-color: rgba(0, 0, 0, 0.7);
+    height: 37%;
+    left: 7%;
+    position: absolute;
+    top: 22%;
+    width: 84%;
+    border: 1.3px solid #00A9FF;" *ngIf="SpeedPopup==true" > -->
+<div style="background-color: rgba(0, 0, 0, 0.7);
+    height:219px;
+    left: 7%;
+    position: absolute;
+    top: 22%;
+    width: 84%;
+    border: 1.3px solid #00A9FF;"  *ngIf="SpeedPopup==true">
+
+<div style="background-color:#FAFAFA;
+    height: 18%;
+    position: absolute;
+    width: 86%;
+    z-index: 100;">
+<div style="margin-top:10px">
+    <ion-icon style="color:red;margin-left: 14px;" name="md-speedometer"></ion-icon><p style="color:red;font-size:1.7rem   ; margin-left: 36px;
+    margin-top: -21px; ">Speed Exceded!!</p>
+</div>
+    </div>
+
+
+    <div >
+<audio controls autoplay>
+
+  <source src="assets/img/dangerous3_HqwgoTte.mp3" type="audio/mpeg">
+
+</audio>
+</div>
+<div id="d" class="otherdivbox">
+    <img class="otherdivimg"  src="assets/img/001-exclamation.png" (click)="close()">
+    <p 
+  class="divp"
+>Slow Down</p>
+</div>
+ </div>
+</ion-content>

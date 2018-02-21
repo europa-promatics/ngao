@@ -1,0 +1,108 @@
+
+
+<ion-header>
+    <ion-navbar color="danger" >
+        <ion-title>Sign Up </ion-title>
+        <ion-buttons end>
+            <button ion-button [navPush]="moreinfo">
+                <ion-icon name="add"></ion-icon>
+                More
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="has-header" padding="true" style="background: url(img/bg-img.png) no-repeat center;background-size:cover;">
+   <p style="text-align: center;color: #FCFCFC">Upload Self Inspection:</p>
+<ion-item no-lines style="position: relative;width: 100%;height: 25%;background-color:transparent;color:#768284;">
+      <button (click)="uploadpic(1)"  style="position:absolute;left: 15%;top: 35%;width: 35px;height: 35px;color:#E74C3C ;" outline round ion-button icon-only>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+        
+           <div class="list">
+       <!--  <ion-avatar style="width:100%;margin-left:45%;"> -->
+       <a class="item item-avatar">
+           <img [src]="pic" *ngIf="pic" style="height:100px; width:100px;border-radius: 50%;margin-left: calc(50% - 50px);" >
+           </a>
+       <!--  </ion-avatar> -->
+      </div>
+      <button (click)="uploadpic(2)" style="position:absolute;right: 15%;top: 35%;width: 35px;height: 35px;color:#E74C3C" outline round ion-button icon-only>
+        <ion-icon name="image"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/transport.png">
+            </ion-icon>
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284" placeholder="Vehicle Model"  [(ngModel)]="vehicle_model"></ion-input>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/transport-1.png">
+            </ion-icon>
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284" placeholder="Vehicle Company" [(ngModel)]="vehicle_make"></ion-input>
+    </ion-item>
+    <ion-item style="background-color:transparent; color:#768284">
+        
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;" item-left><img src="img/snp/day.png">
+            </ion-icon> 
+       <ion-label style="background-color:transparent; color:#768284;margin-left: 40px;">Vehicle Year </ion-label>
+        <ion-datetime style="background-color:transparent; color:#768284;max-width: 23%; " displayFormat="YYYY"  placeholder="Select a Vehicle Year"  [(ngModel)]="vehicle_year" ></ion-datetime>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/paint.png">
+            </ion-icon>
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284"  placeholder="Vehicle Color" [(ngModel)]="vehicle_color"></ion-input>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/people.png">
+            </ion-icon>
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284"  placeholder="*User Name"  [(ngModel)]="user_name"></ion-input>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/black.png">
+            </ion-icon>
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+        </ion-label>
+        <ion-input type="Email" style="background-color:transparent; color:#768284"  [(ngModel)]="email" placeholder="*Email-Id" ></ion-input>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/lock.png">
+            </ion-icon>
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+        </ion-label>
+        <ion-input type="password" style="background-color:transparent; color:#768284" placeholder="*Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/snp/business.png">
+            </ion-icon>
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+        </ion-label>
+        <ion-input type="text" style="background-color:transparent; color:#768284"  [(ngModel)]="about_you" placeholder="Partner Organization"></ion-input>
+    </ion-item>
+    <br>
+    <button  ion-button block  (click)="submitt()" full style="background-color: #e74c3c;color:#FFFFFF">
+    Get Started
+    </button>
+    <ion-card-content>
+        <!-- <b>{{first_name}}</b>
+            <b>{{last_name}}</b>
+            <b>{{age}}</b>
+            <b>{{ethnicity}}</b>
+            <b>{{gender}}</b>
+            <b>{{sexual_orientation}}</b> -->
+    </ion-card-content>
+</ion-content>
+

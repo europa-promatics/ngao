@@ -1,0 +1,96 @@
+
+
+<ion-header style="background-color:transparent; color:#D71D4E">
+<!--    <ion-header> -->
+    <ion-navbar>
+        <ion-title>Sign Up</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content class="has-header" padding="true" style="background: url(img/bg-img.png) no-repeat center;background-size:cover;">
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+            <!--   <ion-icon name="person"></ion-icon> -->
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/peoples.png">
+            </ion-icon>
+        </ion-label>
+        <ion-input class="tarn" type="text" style="background-color:transparent; color:#768284" placeholder="*First Name" [(ngModel)]="first_name"></ion-input>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+            <!--  <ion-icon name="person"></ion-icon> -->
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/peoples.png">
+            </ion-icon>
+        </ion-label>
+        <ion-input class="tarn" type="text" style="background-color:transparent; color:#768284" placeholder="*Last Name"  [(ngModel)]="last_name"></ion-input>
+    </ion-item>
+    <ion-item style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/personaldetail/time.png">
+            </ion-icon>
+        </ion-label>
+        <ion-input type="number" style="background-color:transparent; color:#768284"  placeholder="*Age" [(ngModel)]="age"></ion-input>
+    </ion-item>
+    <ion-item style="background-color:transparent; color:#768284;width: ">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;height:16px;"><img src="img/personaldetail/people-1.png">
+            </ion-icon>
+        </ion-label>
+        <ion-select  placeholder="*Ethnicity" style="background-color:transparent; color:#768284 ;float:left;" [(ngModel)]="ethnicity"  interface="action-sheet">
+        <ion-option value="Asian" checked="true" style="background-color:transparent; color:#768284">Asian</ion-option>
+        <ion-option value="White" style="background-color:transparent; color:#768284">White</ion-option>
+        <ion-option value="Black" style="background-color:transparent; color:#768284">Black</ion-option>
+        <ion-option value="Latino" style="background-color:transparent; color:#768284">Latino</ion-option>
+        <ion-option value="Native" style="background-color:transparent; color:#768284">Native american</ion-option>
+        <ion-option value="Mixed" style="background-color:transparent; color:#768284">Mixed</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item style="background-color:transparent; color:#768284">
+        <ion-label style="background-color:transparent; color:#768284" >
+            <ion-icon style="padding-right: 5px;opacity:0.4;"><img src="img/personaldetail/shapes.png">
+            </ion-icon>
+            <!--   style="background: url(img/bg-img.png) no-repeat center; -->
+        </ion-label>
+        <ion-select style="background-color:transparent; color:#768284 ;" [(ngModel)]="gender" placeholder="Gender" interface="action-sheet">
+        <ion-option value="Male" checked="true">Male</ion-option>
+        <ion-option value="Female" >Female</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;"><img src="img/personaldetail/social.png">
+            </ion-icon>
+        </ion-label>
+        <ion-select style="float: left;"  placeholder="Sexual Orientation" [(ngModel)]="sexual_orientation" interface="action-sheet">
+        <ion-option value="Male" checked="true" style="background-color:transparent; color:#768284">Gay/Lesbian</ion-option>
+        <ion-option value="Straight" style="background-color:transparent; color:#768284">Straight</ion-option>
+        <ion-option value="Bi-Sexual" style="background-color:transparent; color:#768284">Bi-Sexual</ion-option>
+        <ion-option value="Trans-Sexual" style="background-color:transparent; color:#768284">Trans-Sexual</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item style="background-color:transparent; color:#768284">
+        <ion-label  style="background-color:transparent; color:#768284">
+            <ion-icon style="padding-right: 5px;opacity:0.4;"><img src="img/personaldetail/smiley.png">
+            </ion-icon>
+        </ion-label>
+        <ion-select  placeholder="History of mental illness" [(ngModel)]="hmistatus" interface="action-sheet">
+        <ion-option value="YES" checked="true" style="background-color:transparent; color:#768284">Yes</ion-option>
+        <ion-option value="NO" style="background-color:transparent; color:#768284">No</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item  style="background-color:transparent; color:#768284">
+        <ion-label   style="background-color:transparent; color:#768284">
+            <!--  <ion-icon name="mail" item-left></ion-icon> -->
+            <ion-icon style="padding-right: 5px;opacity:0.4;"><img src="img/personaldetail/signs.png">
+            </ion-icon>
+        </ion-label>
+        <ion-input class="tarn" type="text" style="background-color:transparent; color:#768284"   placeholder="Address" [(ngModel)]="address"></ion-input>
+    </ion-item>
+    <br>
+    <button  ion-button block  (click)="submit()" full style="background-color: #e74c3c;color:#FFFFFF">
+    Next 
+    </button>
+</ion-content>
+

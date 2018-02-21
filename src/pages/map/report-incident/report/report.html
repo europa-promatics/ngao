@@ -1,0 +1,79 @@
+
+
+<!--
+  Generated template for the Report page.
+  
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+  -->
+<ion-header>
+  <ion-navbar color="danger">
+  
+    <ion-buttons end>
+      <button ion-button (click)="submitt()">
+        <ion-icon style="font-size: 5.1rem;" name="ios-checkmark" class="check-report" ></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title style="text-align:center;" >Incident details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <ion-item  style="background-color:transparent; color:#000">
+    <ion-label   style="background-color:transparent; color:#00A9FF">
+      <ion-icon name="pin" item-left></ion-icon>
+    </ion-label>
+    <ion-input class="tarn" type="text" style="background-color:transparent; color:#00a9ff" placeholder="Title" [(ngModel)]="data.title"></ion-input>
+  </ion-item>
+
+  <ion-item style="background-color:transparent; color:#768284">
+    <ion-label   style="background-color:transparent; color:#00A9FF">
+      <ion-icon name="chatboxes" item-left></ion-icon>
+    </ion-label>
+    <ion-textarea  placeholder="Incident Detail" style="background-color:transparent; color:#00a9ff" [(ngModel)]="data.description"></ion-textarea>
+  
+  </ion-item>
+  <p style="text-align: center;color: #939495">Upload Incident Pictures:</p>
+  <ion-col>
+
+    <ion-row>
+      <ion-item no-lines style="position: relative;width: 100%;height: 25%;">
+        <button (click)="cuploadpic(1)"  style="position:absolute;left: 15%;top: 35%;width: 35px;height: 35px;color:#00A9FF;" outline round ion-button icon-only>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+        <div class="list">
+          <!--  <ion-avatar style="width:100%;margin-left:45%;"> -->
+          <a class="item item-avatar">
+          <img [src]="cpic" *ngIf="cpic" style="height:100px; width:100px;border-radius: 50%;margin-left: calc(50% - 50px);" >
+          </a>
+          <!--  </ion-avatar> -->
+        </div>
+        <button (click)="cuploadpic(2)" style="position:absolute;right: 15%;top: 35%;width: 35px;height: 35px;color:#00A9FF" outline round ion-button icon-only>
+          <ion-icon name="image"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item no-lines style="position: relative;width: 100%;height: 25%;">
+        <button (click)="duploadpic(1)"  style="position:absolute;left: 15%;top: 35%;width: 35px;height: 35px;color:#00A9FF ;" outline round ion-button icon-only>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+        <div class="list">
+          <!--  <ion-avatar style="width:100%;margin-left:45%;"> -->
+          <a class="item item-avatar">
+          <img [src]="dpic" *ngIf="dpic" style="height:100px; width:100px;border-radius: 50%;margin-left: calc(50% - 50px);" >
+          </a>
+          <!--  </ion-avatar> -->
+        </div>
+        <button (click)="duploadpic(2)" style="position:absolute;right: 15%;top: 35%;width: 35px;height: 35px;color:#00A9FF" outline round ion-button icon-only>
+          <ion-icon name="image"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-row>
+
+  </ion-col>
+  <br>
+  <br>
+
+</ion-content>
+

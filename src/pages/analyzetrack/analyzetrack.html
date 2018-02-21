@@ -1,0 +1,35 @@
+<!--
+  Generated template for the Analyzetrack page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+   <ion-buttons end>
+       <button ion-button (click)="close()"> <ion-icon name="close" style="margin:5px;"></ion-icon></button>
+       </ion-buttons>
+    <ion-title>Analyze Track</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:rgba(0, 0, 0, 0.15)">
+    <div style="border:2px solid rgb(0, 169,255)" id= "maptrack" > </div>
+     <div style="
+    height: 31.8%;
+    margin-left: 28px;
+    max-width: 85%;
+    max-height: 27%; background-color: rgba(0, 0, 0, 0);">
+     <canvas #lineCanvas></canvas>
+    </div>
+     <p style="margin-left: -90%;
+    margin-top: -108%;
+    transform: rotate(-90deg);" >Speed</p>
+     <ion-icon style="margin-left: 31px;
+    margin-top: -36px;"  ><img  style="height: 42px;" src="assets/img/001-gps-1.png"  ></ion-icon>
+     <p style="margin-left: 27%;
+   margin-top: 96%;"  >Distance:(miles)</p>
+</ion-content>

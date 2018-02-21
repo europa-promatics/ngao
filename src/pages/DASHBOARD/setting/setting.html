@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar color="danger" >
+
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  style="background-color:rgb(60, 60, 60);background: url(img/story-3-main-image.jpg) no-repeat center;background-size:cover; ">
+
+	<hr>
+  <div><p style="color: #ec4441;
+    font-size: 1.8rem;
+    font-weight: bold;;
+    font-size: 1.6rem;">Do not show Speed Alerts</p>
+   <ion-toggle color="danger" style=" left: 89%;
+    top: -29px;" [(ngModel)]="notification" (ionChange)="toggleNotification()" ></ion-toggle></div>
+
+</ion-content>

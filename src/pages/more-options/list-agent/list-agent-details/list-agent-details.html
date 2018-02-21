@@ -1,0 +1,30 @@
+
+
+<ion-item no-lines text-wrap>
+    <ion-thumbnail item-right>
+      <img src="http://europa.promaticstechnologies.com/ngao/public/uploads/agents/{{value.photo}}"  height="56px"
+    width="56px">
+    </ion-thumbnail>
+     <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Name:</span>{{value.name}}</p>
+     <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Type:</span> 
+       {{value.agent_type}}</p>
+       <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Status:</span> 
+        {{value.agent_status}}</p>
+        <p style="color:black"><span style="float: left;color:red;margin-right:10px">Agent Vehicle:</span>  
+       {{value.agent_vehicle}}
+              
+    </ion-item>
+
+    <ion-item no-lines text-wrap>
+      
+     <p style="color:black"> <span style="float: left;color:red;margin-right:10px">List of Agent Incidents:</span>{{value.incident_lists}}</p>
+    </ion-item>
+     
+
+
+    <ion-item  no-lines text-wrap>
+    <p style="color:black"><span style="float: left;color:red;margin-right:10px">History of Agent :</span>{{value.agent_info}}</p>
+    </ion-item >
+    <ion-item no-lines text-wrap>
+      <p style="color:black"><span style="float: left;color:red;margin-right:10px">How many time the Agent is their:</span>({{value.their}})</p>
+    </ion-item>
